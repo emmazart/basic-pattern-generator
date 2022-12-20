@@ -1,0 +1,22 @@
+{
+  "name": "basic-pattern-generator",
+  "version": "1.0.0",
+  "description": "An application that takes user input and generates basic knit and crochet patterns.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmazart/basic-pattern-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmazart/basic-pattern-generator/issues"
+  },
+  "homepage": "https://github.com/emmazart/basic-pattern-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
