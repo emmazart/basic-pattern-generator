@@ -23,14 +23,19 @@ const stsPerInch = {
 
 const math = function(makeItem, gauge) {
         
+    let patternInfo = {};
+
     switch(makeItem) {
         case 'Scarf':
             let castOn = 8*gauge;
             let rows = 60*gauge;
-            return castOn, rows;
+            patternInfo = {...patternInfo, "castOn": castOn, "rows": rows};
+            break;
         default:
             console.log("Error, please choose a valid item to make");
-    }
+    };
+
+    return patternInfo;
 };
 
 
@@ -40,6 +45,6 @@ const math = function(makeItem, gauge) {
 inquirer.prompt(questions).then((answer) => {
     let { yarnWeight, makeItem, craft } = answer; // destructure answer object
     let gauge = stsPerInch[yarnWeight]; // find the gauge associated with chosen yarnWeight
-    let {castOn, rows} = math(makeItem, gauge);
-    console.log(`You are ${craft}ing a ${makeItem}. Cast on ${castOn} stitches and work for ${rows} rows.`);
+    let patternInfo = math(makeItem, gauge);
+    console.log(`You are ${craft}ing a ${makeItem} in ${yarnWeight} weight yarn. Cast on ${patternInfo.castOn} stitches and work for ${patternInfo.rows} rows.`);
 });
